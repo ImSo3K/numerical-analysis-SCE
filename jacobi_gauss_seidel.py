@@ -2,6 +2,15 @@ import numpy as np
 
 
 def dominant_diagonal(matrix) -> bool:
+    """checks if the given matrix has a dominant diagonal or not.
+
+    Args:
+        matrix (ndarray): our NxN coefficients matrix.
+
+    Returns:
+        bool: True if the matrix has a dominant diagonal, False otherwise.
+    """
+
     D = np.diag(np.abs(matrix))  # Find diagonal coefficients
     S = np.sum(np.abs(matrix), axis=1) - D  # Find row sum without diagonal
     if np.all(D > S):
@@ -13,6 +22,12 @@ def dominant_diagonal(matrix) -> bool:
 
 
 def gauss_seidel(matrix, RHS_vec) -> None:
+    """solves a system of linear equations with Gauss Seidel method.
+
+    Args:
+        matrix (ndarray): our coefficients NxN matrix.
+        RHS_vec (ndarray): solution vector {b}.
+    """
     if not dominant_diagonal(matrix):
         return
 
@@ -20,8 +35,7 @@ def gauss_seidel(matrix, RHS_vec) -> None:
 
     print("System of equations:")
     for i in range(matrix.shape[0]):
-        row = ["{0:3g}*x{1}".format(matrix[i, j], j + 1)
-               for j in range(matrix.shape[1])]
+        row = ["{0:3g}*x{1}".format(matrix[i, j], j + 1) for j in range(matrix.shape[1])]
         print("[{0}] = [{1:3g}]".format(" + ".join(row), RHS_vec[i]))
 
     x = np.zeros_like(RHS_vec)
@@ -38,14 +52,18 @@ def gauss_seidel(matrix, RHS_vec) -> None:
 
 
 def jacobi(matrix, RHS_vec, epsilon=1e-3, max_iterations=1000) -> None:
+    """solves a system of linear equations with Jacobi method.
+
+    Args:
+        matrix (ndarray): our coefficients NxN matrix.
+        RHS_vec (ndarray): solution vector {b}.
+    """
     if not dominant_diagonal(matrix):
         return
 
-
     print("System of equations:")
     for i in range(matrix.shape[0]):
-        row = ["{0:3g}*x{1}".format(matrix[i, j], j + 1)
-                for j in range(matrix.shape[1])]
+        row = ["{0:3g}*x{1}".format(matrix[i, j], j + 1) for j in range(matrix.shape[1])]
         print("[{0}] = [{1:3g}]".format(" + ".join(row), RHS_vec[i]))
 
     x = np.zeros_like(RHS_vec)
