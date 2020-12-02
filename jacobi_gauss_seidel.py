@@ -57,6 +57,8 @@ def jacobi(matrix, RHS_vec, epsilon=1e-3, max_iterations=1000) -> None:
     Args:
         matrix (ndarray): our coefficients NxN matrix.
         RHS_vec (ndarray): solution vector {b}.
+        epsilon (float): tolerance.
+        max_iterations (int): upper bound.
     """
     if not dominant_diagonal(matrix):
         return
