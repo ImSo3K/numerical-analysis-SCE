@@ -1,5 +1,4 @@
 from math import cos
-from random import uniform
 
 
 def newton_raphson(f, x0, epsilon=1e-4):
