@@ -62,7 +62,7 @@ def activator(method, f):
         f (function): which function is going to be used with the method.
     """
     item = range_tuple[0]
-    if range_tuple[1] - range_tuple[0] > 1:
+    if range_tuple[1] - range_tuple[0] >= 1:
         for i in range(range_tuple[1]):
             if (f(item) > 0 and f(item+1) < 0) or (f(item) < 0 and f(item+1) > 0):
                 print(f'roots in range [{item}, {item + 1}] : ')
