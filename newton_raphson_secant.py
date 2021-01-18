@@ -34,7 +34,7 @@ def newton_raphson(f, x0, epsilon=1e-4) -> None:
 
 
 def secant(f, x0, x1, epsilon=1e-4) -> None:
-    """find root of a real function with Newton-Raphson method.
+    """find root of a real function with Secant method.
 
     Args:
         f (function): the function whose root we are trying to find.
