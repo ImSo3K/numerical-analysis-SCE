@@ -1,7 +1,7 @@
 from math import cos
 
 
-def newton_raphson(f, x0, epsilon=1e-4):
+def newton_raphson(f, x0, epsilon=1e-4) -> None:
     """find root of a real function with Newton-Raphson method.
 
     Args:
@@ -33,7 +33,7 @@ def newton_raphson(f, x0, epsilon=1e-4):
         print('Did not converge')
 
 
-def secant(f, x0, x1, epsilon=1e-4):
+def secant(f, x0, x1, epsilon=1e-4) -> None:
     """find root of a real function with Newton-Raphson method.
 
     Args:
@@ -54,7 +54,7 @@ def secant(f, x0, x1, epsilon=1e-4):
 def func(x): return 4*x**3 - 48*x + 5
 
 
-def activator(method, f):
+def activator(method, f) -> None:
     """activates the proper method to find the roots of a function.
 
     Args:

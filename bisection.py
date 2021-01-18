@@ -3,7 +3,7 @@ import numpy as np
 import itertools
 
 
-def bisection(start_point, end_point, f, epsilon):
+def bisection(start_point, end_point, f, epsilon) -> None:
     """finding the root of the function with bisection method.
     Args:
         start_point (float): intuitive starting point.
@@ -29,15 +29,15 @@ def bisection(start_point, end_point, f, epsilon):
                 f"iteration number: {i+1}: {start_point} + {end_point} / 2={m}")
 
     # rounding works until 1e-4 because from there the number repr changes to "1e-x"
-    if(f==f_derivative and function(m)==0):
-        roots.append((round(m,len(str(epsilon)[2:]))))
-    elif abs(f(round(m, int(str(epsilon).split('.')[1])))) == 0 or abs(start_point - end_point) < epsilon and f!=f_derivative:
-        roots.append((round(m,len(str(epsilon)[2:]))))
+    if(f == f_derivative and function(m) == 0):
+        roots.append((round(m, len(str(epsilon)[2:]))))
+    elif abs(f(round(m, int(str(epsilon).split('.')[1])))) == 0 or abs(start_point - end_point) < epsilon and f != f_derivative:
+        roots.append((round(m, len(str(epsilon)[2:]))))
     else:
         print('no root for this function in given')
 
 
-def range_bisection(min_range, max_range, section):
+def range_bisection(min_range, max_range, section) -> None:
     """send each valid section to the bisection algorithm.
     Args:
         min_range (int): starting point of the total range
