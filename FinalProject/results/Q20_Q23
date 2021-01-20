@@ -1,0 +1,31 @@
+#Question No. 23 using gauss_seidel:
+matrix is diagonally dominant
+System of equations:
+[0.04*x1 + 0.01*x2 + 0.01*x3] = [0.06]
+[0.2*x1 + 0.5*x2 + -0.2*x3] = [0.3]
+[  1*x1 +   2*x2 +   4*x3] = [ 11]
+Solution: [0.7176461  1.11764487 2.01176604]
+
+#Question No. 23 using jacobi:
+matrix is diagonally dominant
+System of equations:
+[0.04*x1 + 0.01*x2 + 0.01*x3] = [0.06]
+[0.2*x1 + 0.5*x2 + -0.2*x3] = [0.3]
+[  1*x1 +   2*x2 +   4*x3] = [ 11]
+Solution: [0.71764706 1.11764706 2.01176471]
+
+#Question No. 20 using gauss_seidel:
+matrix is diagonally dominant
+System of equations:
+[ 10*x1 +   8*x2 +   1*x3] = [ -7]
+[  4*x1 +  10*x2 +  -5*x3] = [  2]
+[  5*x1 +   1*x2 +  10*x3] = [1.5]
+Solution: [-1.99996435  1.49997372  0.9999848 ]
+
+#Question No. 20 using jacobi:
+matrix is diagonally dominant
+System of equations:
+[ 10*x1 +   8*x2 +   1*x3] = [ -7]
+[  4*x1 +  10*x2 +  -5*x3] = [  2]
+[  5*x1 +   1*x2 +  10*x3] = [1.5]
+Solution: [-2.   1.5  1. ]

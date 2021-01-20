@@ -1,0 +1,27 @@
+Newton-Rhapson roots: 
+roots in range [-0.97, -0.96] : 
+solution found : -0.9648883995044161, iteration number : 3
+roots in range [0.6700000000000015, 0.6800000000000015] : 
+solution found : 0.6713164254056847, iteration number : 3
+roots in range [0.9300000000000017, 0.9400000000000017] : 
+solution found : 0.9345938775136324, iteration number : 3
+roots in range [1.1200000000000019, 1.130000000000002] : 
+solution found : 1.1231836232005368, iteration number : 3
+roots in range [1.2700000000000022, 1.2800000000000022] : 
+solution found : 1.2754316702695134, iteration number : 3
+roots in range [1.4000000000000021, 1.4100000000000021] : 
+solution found : 1.4052951068533008, iteration number : 3
+
+Secant roots: 
+roots in range [-0.97, -0.96] : 
+solution found : -0.9648883994344514, iteration number : 3
+roots in range [0.6700000000000015, 0.6800000000000015] : 
+solution found : 0.6713164254800149, iteration number : 3
+roots in range [0.9300000000000017, 0.9400000000000017] : 
+solution found : 0.9345938776799969, iteration number : 3
+roots in range [1.1200000000000019, 1.130000000000002] : 
+solution found : 1.123183623307375, iteration number : 3
+roots in range [1.2700000000000022, 1.2800000000000022] : 
+solution found : 1.275431670378296, iteration number : 3
+roots in range [1.4000000000000021, 1.4100000000000021] : 
+solution found : 1.4052951069511495, iteration number : 3
