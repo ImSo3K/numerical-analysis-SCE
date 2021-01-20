@@ -89,9 +89,9 @@ def func(x): return (sin(2*x**3 + 5*x**2 - 6))/(2*exp(-2*x))
 
 
 if __name__ == '__main__':
-    print(simpsons_one_third(func, 0, 1, 2500))
+    print(f'Simpsons Solution: {simpsons_one_third(func, 0, 1, 2500)}')
     print()
     p_rows = 5
     final_I = romberg(func, 0, 1, p_rows)
     solution = final_I[p_rows-1, p_rows-1]
-    print(f'solution - {solution}')
+    print(f'Romberg Solution: {solution}')
