@@ -32,7 +32,8 @@ def gauss_seidel(matrix, RHS_vec) -> None:
 
     print("System of equations:")
     for i in range(matrix.shape[0]):
-        row = ["{0:3g}*x{1}".format(matrix[i, j], j + 1) for j in range(matrix.shape[1])]
+        row = ["{0:3g}*x{1}".format(matrix[i, j], j + 1)
+               for j in range(matrix.shape[1])]
         print("[{0}] = [{1:3g}]".format(" + ".join(row), RHS_vec[i]))
 
     x = np.zeros_like(RHS_vec)
@@ -59,7 +60,8 @@ def jacobi(matrix, RHS_vec, epsilon=1e-5, max_iterations=1000) -> None:
 
     print("System of equations:")
     for i in range(matrix.shape[0]):
-        row = ["{0:3g}*x{1}".format(matrix[i, j], j + 1) for j in range(matrix.shape[1])]
+        row = ["{0:3g}*x{1}".format(matrix[i, j], j + 1)
+               for j in range(matrix.shape[1])]
         print("[{0}] = [{1:3g}]".format(" + ".join(row), RHS_vec[i]))
 
     x = np.zeros_like(RHS_vec)
@@ -73,29 +75,30 @@ def jacobi(matrix, RHS_vec, epsilon=1e-5, max_iterations=1000) -> None:
 
 # initialize the matrix
 
-#Question No. 20:
+
+# Question No. 20:
 A3 = np.array([[10, 8, 1],
-                [4, 10, -5],
-                [5, 1, 10]])
-#Question No. 23:
+               [4, 10, -5],
+               [5, 1, 10]])
+# Question No. 23:
 A2 = np.array([[0.04, 0.01, 0.01],
-                [0.2, 0.5, -0.2],
+               [0.2, 0.5, -0.2],
                [1, 2, 4]])
 
 # initialize the RHS vector
-#Question No. 20:
-b3 = np.array([-7,2,1.5])
-#Question No. 23:
-b2 = np.array([0.06,0.3,11])
+# Question No. 20:
+b3 = np.array([-7, 2, 1.5])
+# Question No. 23:
+b2 = np.array([0.06, 0.3, 11])
 
 print("#Question No. 23 using gauss_seidel:")
-gauss_seidel(A2, b2) #23
+gauss_seidel(A2, b2)  # 23
 print()
 print("#Question No. 23 using jacobi:")
 jacobi(A2, b2)
 print()
 print("#Question No. 20 using gauss_seidel:")
-gauss_seidel(A3, b3) #20
+gauss_seidel(A3, b3)  # 20
 print()
 print("#Question No. 20 using jacobi:")
 jacobi(A3, b3)
