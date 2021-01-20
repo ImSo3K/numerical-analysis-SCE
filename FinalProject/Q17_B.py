@@ -87,9 +87,9 @@ def func(x): return x**2*exp(-x**2-5*x-3)*(3*x-1)
 
 
 if __name__ == '__main__':
-    print(simpsons_one_third(func, 0.5, 1, 20))
+    print(f'Simpsons Solution: {simpsons_one_third(func, 0.5, 1, 20)}')
     print()
     p_rows = 2
     final_I = romberg(func, 0.5, 1, p_rows)
     solution = final_I[p_rows-1, p_rows-1]
-    print(solution)
+    print(f'Romberg Solution: {solution}')

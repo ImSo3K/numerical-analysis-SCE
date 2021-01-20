@@ -57,29 +57,31 @@ def romberg(f, a, b, p):
         Returns:
             float: approximation of the integral of f(x).
         """
-
         # Initialization
         deltaX = (b - a) / N
         x = a
 
         # Composite rule
         In = f(a)
-        for k in range(1, N):
+        for i in range(1, N):
             x = x + deltaX
             In += 2*f(x)
+            # print(In, end=" ")
         return (In + f(b))*deltaX*0.5
 
     I = np.zeros((p, p))
-    for k in range(0, p):
+    for i in range(0, p):
         # Composite trapezoidal rule for 2^k panels
-        I[k, 0] = trapezcomp(f, a, b, 2**k)
-
+        I[i, 0] = trapezcomp(f, a, b, 2**i)
+        print(f'R(n, 0) = {I[i, 0]}')
         # Romberg recursive formula
-        for j in range(0, k):
-            I[k, j+1] = (4**(j+1) * I[k, j] - I[k-1, j]) / (4**(j+1) - 1)
-
-        print(I[k, 0:k+1])   # display intermediate results
-
+        for j in range(0, i):
+            I[i, j+1] = (4**(j+1) * I[i, j] - I[i-1, j]) / (4**(j+1) - 1)
+    print()
+    for i in range(len(I)):
+        for j in range(i+1):
+            print(f'{I[i,j]:.10f}', end=' ')
+        print()
     return I
 
 
@@ -92,5 +94,4 @@ if __name__ == '__main__':
     p_rows = 5
     final_I = romberg(func, 0, 1, p_rows)
     solution = final_I[p_rows-1, p_rows-1]
-    print(solution)
-    
+    print(f'solution - {solution}')
