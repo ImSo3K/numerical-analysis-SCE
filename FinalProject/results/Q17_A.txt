@@ -1,9 +1,14 @@
 Newton-Rhapson roots: 
 roots in range [0.3300000000000001, 0.34000000000000014] : 
+iteration No. 1, x1 = 0.34000000000000014 - 0.006657685318629141
+iteration No. 2, x1 = 0.333342314681371 - 8.981321164020155e-06
 solution found : 0.333333333360207, iteration number : 2
 solution found : -0.0, iteration number : 0
 
 Secant roots: 
 roots in range [0.3300000000000001, 0.34000000000000014] : 
+iteration No. 1, x = 0.34000000000000014 - 0.006703024052424615
+iteration No. 2, x = 0.3332969759475755 - -3.596816826431214e-05
+iteration No. 3, x = 0.3333329441158398 - -3.892410832985115e-07
 solution found : 0.3333333333569231, iteration number : 3
 solution found : -0.0, iteration number : 0
