@@ -19,6 +19,7 @@ def newton_raphson(f, x0, epsilon=1e-5) -> None:
         y_der = func_der(x0)
 
         x1 = x0 - y/y_der
+        print(f'iteration No. {i+1}, x1 = {x0} - {y/y_der}')
         if abs(x1 - x0) <= epsilon:
             solution = True
             print(f'solution found : {x1}, iteration number : {i+1}')
@@ -44,6 +45,7 @@ def secant(f, x0, x1, epsilon=1e-5) -> None:
     """
     for i in range(0, 100):
         x = x1 - ((f(x1)*(x1-x0))/(f(x1) - f(x0)))
+        print(f'iteration No. {i+1}, x = {x1} - {((f(x1)*(x1-x0))/(f(x1) - f(x0)))}')
         if abs(x-x1) < epsilon:
             print(f'solution found : {x}, iteration number : {i+1}')
             return
