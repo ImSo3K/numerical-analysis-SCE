@@ -30,16 +30,16 @@ def gauss_seidel(matrix, RHS_vec) -> None:
 
     ITERATION_LIMIT = 1000
 
-    print("System of equations:")
+    print('System of equations:')
     for i in range(matrix.shape[0]):
-        row = ["{0:3g}*x{1}".format(matrix[i, j], j + 1)
+        row = ['{0:3g}*x{1}'.format(matrix[i, j], j + 1)
                for j in range(matrix.shape[1])]
-        print("[{0}] = [{1:3g}]".format(" + ".join(row), RHS_vec[i]))
+        print('[{0}] = [{1:3g}]'.format(' + '.join(row), RHS_vec[i]))
     iter_no = 0
     x = np.zeros_like(RHS_vec)
     for it_count in range(1, ITERATION_LIMIT):
         x_new = np.zeros_like(x)
-        print("iterative equetions:")
+        print('iterative equetions:')
         for i in range(matrix.shape[0]):
             s1 = np.dot(matrix[i, :i], x_new[:i])
             s2 = np.dot(matrix[i, i + 1:], x[i + 1:])
@@ -53,6 +53,7 @@ def gauss_seidel(matrix, RHS_vec) -> None:
         iter_no = it_count
     print(
         f'Solution found : [x1r+1 = {x[0]}, x2r+1 = {x[1]}, x3r+1 = {x[2]}] iteration No. : {iter_no}')
+    return x
 
 
 def jacobi(matrix, RHS_vec, epsilon=1e-5, max_iterations=1000) -> None:
@@ -64,11 +65,11 @@ def jacobi(matrix, RHS_vec, epsilon=1e-5, max_iterations=1000) -> None:
     if not dominant_diagonal(matrix):
         return
 
-    print("System of equations:")
+    print('System of equations:')
     for i in range(matrix.shape[0]):
-        row = ["{0:3g}*x{1}".format(matrix[i, j], j + 1)
+        row = ['{0:3g}*x{1}'.format(matrix[i, j], j + 1)
                for j in range(matrix.shape[1])]
-        print("[{0}] = [{1:3g}]".format(" + ".join(row), RHS_vec[i]))
+        print('[{0}] = [{1:3g}]'.format(' + '.join(row), RHS_vec[i]))
     iter_no = 0
     x = np.zeros_like(RHS_vec)
     D = np.diag(np.diag(matrix))
@@ -104,14 +105,14 @@ b3 = np.array([-7, 2, 1.5])
 b2 = np.array([0.06, 0.3, 11])
 
 if __name__ == '__main__':
-    print("#Question No. 23 using gauss_seidel:")
+    print('#Question No. 23 using gauss_seidel:')
     gauss_seidel(A2, b2)  # 23
     print()
-    print("#Question No. 23 using jacobi:")
+    print('#Question No. 23 using jacobi:')
     jacobi(A2, b2)
     print()
-    print("#Question No. 20 using gauss_seidel:")
+    print('#Question No. 20 using gauss_seidel:')
     gauss_seidel(A3, b3)  # 20
     print()
-    print("#Question No. 20 using jacobi:")
+    print('#Question No. 20 using jacobi:')
     jacobi(A3, b3)

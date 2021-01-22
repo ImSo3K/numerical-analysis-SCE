@@ -1,7 +1,7 @@
 import numpy as np
 
 
-def lagrange(x, y, x_for_approx):
+def lagrange(x, y, x_for_approx) -> float:
     """interpolation for the given value 'x_for_approx'.
 
     Args:
@@ -28,7 +28,7 @@ def lagrange(x, y, x_for_approx):
     return approx_result
 
 
-def neville(x, y, x_for_approx):
+def neville(x, y, x_for_approx) -> float:
     """interpolation for the given value 'x_for_approx'.
 
     Args:
@@ -69,10 +69,10 @@ if __name__ == '__main__':
 
     print(f'Coefficients matrix:\n{coefficients_matrix}')
     print(
-        f"the Neville`s interpolated value at {x_for_approx} is: {approx_result}")
+        f'the Neville`s interpolated value at {x_for_approx} is: {approx_result}')
 
     print()
     print('Lagrange Interpolation:')
     approx_result = lagrange(x_values, y_values, x_for_approx)
     print(
-        f"the Lagrange`s interpolated value at {x_for_approx} is: {approx_result}")
+        f'the Lagrange`s interpolated value at {x_for_approx} is: {approx_result}')

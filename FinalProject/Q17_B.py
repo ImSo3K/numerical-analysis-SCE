@@ -2,7 +2,7 @@ from math import exp
 import numpy as np
 
 
-def simpsons_one_third(f, a, b, N):
+def simpsons_one_third(f, a, b, N) -> float:
     """Calculates and prints the process of Simpson's one-third method for calculating an integral.
 
 
@@ -20,24 +20,24 @@ def simpsons_one_third(f, a, b, N):
     """
 
     if N % 2 == 1:
-        raise ValueError("N must be an even integer.")
+        raise ValueError('N must be an even integer.')
 
     integral = f(a)
     deltaX = (b - a) / N
-    print(f"deltaX={deltaX}")
-    print(f'h/3 * ({integral})', end="")
+    print(f'deltaX={deltaX}')
+    print(f'h/3 * ({integral})', end='')
     multiplier = 2
     for i in range(1, N-1):
         fxi = multiplier*f(a+i*deltaX)
-        print(f" + {multiplier}*f({a+i*deltaX:.5f}) ", end="")
+        print(f' + {multiplier}*f({a+i*deltaX:.5f}) ', end='')
         integral += fxi
         multiplier = 4 if multiplier == 2 else 2
-    print(f"+ {f(b):.5f})")
+    print(f'+ {f(b):.5f})')
 
     return (deltaX/3)*(integral + f(b))
 
 
-def romberg(f, a, b, p):
+def romberg(f, a, b, p) -> nd.array:
     """Calculates and prints the process of Romberg's method for calculating an integral.
 
     Args:
@@ -45,8 +45,11 @@ def romberg(f, a, b, p):
         a (int): lower boundry of the integral.
         b (int): upper boundry of the integral.
         p (int): number of rows in the Romberg table.
+
+        Returns:
+            ndarray: 'L' shape table of approximation.
     """
-    def trapezcomp(f, a, b, N):
+    def trapezcomp(f, a, b, N) -> float:
         """composite trapezoidal function integration.
         Args:
         f (function): the function that is going to be integraled.
@@ -69,18 +72,18 @@ def romberg(f, a, b, p):
             In += 2*f(x)
         return (In + f(b))*deltaX*0.5
 
-    I = np.zeros((p, p))
+    approx_table = np.zeros((p, p))
     for k in range(0, p):
         # Composite trapezoidal rule for 2^k panels
-        I[k, 0] = trapezcomp(f, a, b, 2**k)
+        approx_table[k, 0] = trapezcomp(f, a, b, 2**k)
 
         # Romberg recursive formula
         for j in range(0, k):
-            I[k, j+1] = (4**(j+1) * I[k, j] - I[k-1, j]) / (4**(j+1) - 1)
+            approx_table[k, j+1] = (4**(j+1) * approx_table[k, j] - approx_table[k-1, j]) / (4**(j+1) - 1)
 
-        print(I[k, 0:k+1])   # display intermediate results
+        print(approx_table[k, 0:k+1]) # display intermediate results
 
-    return I
+    return approx_table
 
 
 def func(x): return x**2*exp(-x**2-5*x-3)*(3*x-1)
