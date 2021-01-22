@@ -1,3 +1,4 @@
 config.py
 objectdb
 .vscode
+__pycache__/
