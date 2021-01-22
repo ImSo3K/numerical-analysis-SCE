@@ -103,14 +103,15 @@ b3 = np.array([-7, 2, 1.5])
 # Question No. 23:
 b2 = np.array([0.06, 0.3, 11])
 
-print("#Question No. 23 using gauss_seidel:")
-gauss_seidel(A2, b2)  # 23
-print()
-print("#Question No. 23 using jacobi:")
-jacobi(A2, b2)
-print()
-print("#Question No. 20 using gauss_seidel:")
-gauss_seidel(A3, b3)  # 20
-print()
-print("#Question No. 20 using jacobi:")
-jacobi(A3, b3)
+if __name__ == '__main__':
+    print("#Question No. 23 using gauss_seidel:")
+    gauss_seidel(A2, b2)  # 23
+    print()
+    print("#Question No. 23 using jacobi:")
+    jacobi(A2, b2)
+    print()
+    print("#Question No. 20 using gauss_seidel:")
+    gauss_seidel(A3, b3)  # 20
+    print()
+    print("#Question No. 20 using jacobi:")
+    jacobi(A3, b3)
