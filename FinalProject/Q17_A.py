@@ -2,7 +2,7 @@ import math
 from numpy import arange
 
 
-def newton_raphson(f, x0, epsilon=1e-4):
+def newton_raphson(f, x0, epsilon=1e-5) -> None:
     """find root of a real function with Newton-Raphson method.
     Args:
         f (function): the function whose root we are trying to find.
@@ -34,7 +34,7 @@ def newton_raphson(f, x0, epsilon=1e-4):
         print('Did not converge')
 
 
-def secant(f, x0, x1, epsilon=1e-4):
+def secant(f, x0, x1, epsilon=1e-5) -> None:
     """find root of a real function with Newton-Raphson method.
     Args:
         f (function): the function whose root we are trying to find.
@@ -55,7 +55,7 @@ def secant(f, x0, x1, epsilon=1e-4):
 def func(x): return (math.pow(x, 2)*math.exp(math.pow(-x, 2)-5*x-3))*(3*x-1)
 
 
-def activator(method, f):
+def activator(method, f) -> None:
     """activates the proper method to find the roots of a function.
     Args:
         method (function): which method we want to use.
